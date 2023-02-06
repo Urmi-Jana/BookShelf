@@ -8,4 +8,4 @@ Comes with
 - Summaries of posts displayed on the home page
 - Links to the respective posts accessible by the Read More button attached to each summary
 
-# Now uses MongoDB Atlas Cloud Services
+### Now uses MongoDB Atlas Cloud Services
