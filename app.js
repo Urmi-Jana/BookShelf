@@ -1,5 +1,6 @@
 //jshint esversion:6
 require('dotenv').config()
+const multer = require('multer')
 const mongoose = require("mongoose")
 const express = require("express");
 const ejs = require("ejs");
@@ -23,7 +24,7 @@ mongoose.connect("mongodb+srv://admin-urmi:"+pass+"@cluster0.d1ij7.mongodb.net/B
 
 const postSchema = {
   title: String,
-  content: String 
+  content: String
 }
 
 const Post = mongoose.model("Post", postSchema);
