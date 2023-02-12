@@ -38,3 +38,24 @@ html {
 	font-size: 12px;
   color: #fff;
 }
+
+
+.column {
+  padding: 10px;
+  float: left;
+  width: 50%;
+}
+
+@media screen and (max-width: 900px) {
+  .column {
+    width: 100%;
+  }
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

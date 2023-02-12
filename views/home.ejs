@@ -3,16 +3,35 @@
     <h1>Home</h1>
     <p> <%= startingContent %> </p>
 
-  <%  posts.forEach(function(post){ %>
+  <% posts1 = posts.filter((_, i) => !(i % 2)) %>
+  
+  <div class = 'row'>
+    <div class = 'column'>
+      <%  posts1.forEach(function(post){ %>
 
-    <h1><%=post.title%></h1>
-    <p>
-    <%=post.content.substring(0, 100) + " ..."%>
-    <a href="/posts/<%=post._id%>">Read More</a>
-    </p>
+        <h1><%=post.title%></h1>
+        <p>
+        <%=post.content.substring(0, 100) + " ..."%>
+        <a href="/posts/<%=post._id%>">Read More</a>
+        </p>
+    
+        <% }) %>
+    </div>
+    <div class = 'column'>
+      <%  posts.filter((_, i) => (i % 2)).forEach(function(post){ %>
 
+        <h1><%=post.title%></h1>
+        <p>
+        <%=post.content.substring(0, 100) + " ..."%>
+        <a href="/posts/<%=post._id%>">Read More</a>
+        </p>
+    
+    
+        <% }) %>
+    </div>
+  </div>
 
-    <% }) %>
+ 
 
 
 <%- include("partials/footer"); -%>
