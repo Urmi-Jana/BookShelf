@@ -1,23 +1,11 @@
+
 <%- include("partials/header"); -%>
 
   <h1><%=title%></h1>
   <p><%=content%></p>
 
-  <div class = 'reviews'>
-    <% reviews.forEach(function (review) { %>
-
-      <h4><%= review.username %></h4>
-      <p> <%= review.comment %> </p>
-      
-    <% }) %>
-  </div>
-
-  <div class = 'reviews'>
-    <h3 align = "center">Submit a Review</h3>
-    <div class = 'submit'>
-      <textarea></textarea>
-    </div>
-    <h3 align = 'center'>Reviews</h3>
+  <div class = 'submit'>
+    <h3 align = 'center'>Submit a Review</h3>
     <div class = 'comments'>
       <form class="" action="/posts/:postId" method="post">
         <div class="form-group">
@@ -25,11 +13,19 @@
           <input class="form-control" type="text" name="username">
           <label>Comment</label>
           <textarea class="form-control" name="reviewBody" rows="5" cols="30"></textarea>
-         
         </div>
-        <button class="btn btn-primary" type="submit" name="button">Publish</button>
+        <button class="btn btn-primary" type="submit" name = "postid" value = <%= postid %> > Publish</button>
       </form>
     </div>
+
+    <h3 align = "center">Reviews</h3>
+    <div class = 'reviews'>
+      <% reviews.forEach(function (review) { %>
+        <h4><%= review.username %></h4>
+        <p> <%= review.comment %> </p>        
+      <% }) %>
+    </div>
+
   </div>
 
 <%- include("partials/footer"); -%>

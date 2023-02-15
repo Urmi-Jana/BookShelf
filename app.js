@@ -21,10 +21,17 @@ const pass = process.env.DB_PASSWORD;
 
 mongoose.connect("mongodb+srv://admin-urmi:"+pass+"@cluster0.d1ij7.mongodb.net/BookReview", {useNewUrlParser: true});
 
+const reviewSchema = {
+  username: String,
+  comment: String
+}
+
+const Review = mongoose.model("Review", reviewSchema)
 
 const postSchema = {
   title: String,
-  content: String
+  content: String,
+  reviews: [reviewSchema]
 }
 
 const Post = mongoose.model("Post", postSchema);
@@ -57,7 +64,8 @@ app.get("/compose", function(req, res){
 app.post("/compose", function(req, res){
   const post = new Post( {
     title: req.body.postTitle,
-    content: req.body.postBody
+    content: req.body.postBody,
+    reviews: []
   });
 
   post.save(function(err){
@@ -68,17 +76,42 @@ app.post("/compose", function(req, res){
 
 app.get("/posts/:postId", function(req, res){
   const requestedTitle = (req.params.postId);
+  console.log(req.params.postId);
 
   Post.findById(requestedTitle, function(err, post){
     if (err) console.log(err);
     else{
       res.render("post", {
         title: post.title,
-        content: post.content
+        content: post.content,
+        reviews: post.reviews,
+        postid: requestedTitle
       })
     }
   })
 });
+
+app.post("/posts/:postId", function(req, res){  
+
+  Post.findById(req.body.postid, function(err, post){
+    if (err) console.log(err);
+    else {
+      const newReview = new Review({
+        username: req.body.username,
+        comment: req.body.reviewBody
+      })
+
+      console.log(post.title);
+
+      post.reviews.push(newReview)
+
+      post.save(function(err){
+        if (!err) res.redirect("/posts/" + req.body.postid);
+        else console.log(err);
+      }); 
+    }
+  })
+})
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");
