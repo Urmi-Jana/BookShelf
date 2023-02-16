@@ -43,7 +43,7 @@ app.get("/", function(req, res){
       console.log(post.title);
     })
     res.render("home", {
-      startingContent: homeStartingContent,
+      // startingContent: homeStartingContent,
       posts: posts
       });
   })
