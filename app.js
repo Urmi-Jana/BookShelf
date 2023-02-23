@@ -30,6 +30,7 @@ const Review = mongoose.model("Review", reviewSchema)
 const postSchema = {
   title: String,
   content: String,
+  url: String,
   reviews: [reviewSchema]
 }
 
@@ -64,6 +65,7 @@ app.post("/compose", function(req, res){
   const post = new Post( {
     title: req.body.postTitle,
     content: req.body.postBody,
+    url: req.body.image,
     reviews: []
   });
 
@@ -84,6 +86,7 @@ app.get("/posts/:postId", function(req, res){
         title: post.title,
         content: post.content,
         reviews: post.reviews,
+        url: post.url,
         postid: requestedTitle
       })
     }
