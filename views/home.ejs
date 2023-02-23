@@ -9,6 +9,7 @@
       <%  posts1.forEach(function(post){ %>
 
         <h1><%=post.title%></h1>
+        <img src = <%= post.url %> >
         <p>
         <%=post.content.substring(0, 100) + " ..."%>
         <a href="/posts/<%=post._id%>">Read More</a>
