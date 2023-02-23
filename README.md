@@ -1,4 +1,5 @@
-# The Blog
+# The BookShelf
+### A collection of books I've read and want to read
 
 A blog website format made with NodeJS, EJS and MongoDB.
 
