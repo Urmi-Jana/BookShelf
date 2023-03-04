@@ -8,11 +8,15 @@
     <div class = 'column'>
       <%  posts1.forEach(function(post){ %>
 
-        <h1><%=post.title%></h1>
-        <img src = <%= post.url %> >
+        <h1 style="padding-bottom: 5%;"><%=post.title%></h1>
+        
         <p>
-        <%=post.content.substring(0, 100) + " ..."%>
-        <a href="/posts/<%=post._id%>">Read More</a>
+          <img src = <%= post.url %> >
+          <div class="summary">
+            <%=post.content.substring(0, 100) + " ..."%>
+            <a href="/posts/<%=post._id%>">Read More</a>
+          </div>
+          
         </p>
     
         <% }) %>
@@ -20,10 +24,14 @@
     <div class = 'column'>
       <%  posts.filter((_, i) => (i % 2)).forEach(function(post){ %>
 
-        <h1><%=post.title%></h1>
+        <h1 style="padding-bottom: 5%;"><%=post.title%></h1>
+
         <p>
-        <%=post.content.substring(0, 100) + " ..."%>
-        <a href="/posts/<%=post._id%>">Read More</a>
+          <img src = <%= post.url %> >
+          <div class="summary">
+            <%=post.content.substring(0, 100) + " ..."%>
+            <a href="/posts/<%=post._id%>">Read More</a>
+          </div>
         </p>
     
     

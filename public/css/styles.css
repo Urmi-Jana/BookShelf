@@ -59,6 +59,12 @@ p{
   width: 50%;
 }
 
+.summary{
+  position: relative;
+  padding-left: 280px;
+  bottom: 350px;
+}
+
 @media screen and (max-width: 900px) {
   .column {
     width: 100%;
