@@ -59,6 +59,15 @@ p{
   width: 50%;
 }
 
+.post-content{
+  width: 70%;
+}
+
+.post-img{
+  position: relative; 
+  left: 70%;
+}
+
 .summary{
   position: relative;
   padding-left: 280px;
@@ -69,6 +78,9 @@ p{
   .column {
     width: 100%;
   }
+  .post-content{width: 100%;}
+  .post-img{position: relative; 
+    left: 30%;}
 }
 
 /* Clear floats after the columns */
