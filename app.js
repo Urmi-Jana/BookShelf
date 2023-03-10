@@ -116,6 +116,6 @@ app.post("/posts/:postId", function(req, res){
   })
 })
 
-app.listen(PORT, function() {
-  console.log(`Server started on port {PORT} ` );
+app.listen(port, function() {
+  console.log(`Server started on port {port} ` );
 });
