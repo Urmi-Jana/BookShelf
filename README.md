@@ -8,5 +8,6 @@ Comes with
 - A hidden route to compose a post (only visible to the author)
 - Summaries of posts displayed on the home page
 - Links to the respective posts accessible by the Read More button attached to each summary
+- Space for readers to leave comments and views comments left by other people
 
 ### Now uses MongoDB Atlas Cloud Services
