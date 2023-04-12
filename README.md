@@ -1,7 +1,9 @@
 # The BookShelf
 ### A collection of books I've read and want to read
 
-A personal book blog made with NodeJS, EJS and MongoDB Atlas Cloud Service
+A personal book blog made with NodeJS, EJS and MongoDB Atlas Cloud Service.
+
+Available at: https://thebookshelf.onrender.com/
 
 Features: 
 - Homepage with shortened entries for each book with links to the respective posts accessible by the Read More button attached to each summary
