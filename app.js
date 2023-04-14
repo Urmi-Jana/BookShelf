@@ -8,7 +8,7 @@ const _ = require("lodash");
 const port = process.env.PORT || 3000;
 
 
-const aboutContent = "Hi there! Welcome to the BookShelf, a collection of the books I've read and want to read in the future, along with my thoughts about them. Feel free to leave a comment and read what other people think about the book as weel!! It would mean the world to me if you started reading a book because of my review.";
+const aboutContent = "Hi there! Welcome to My BookShelf, a collection of the books I've read and want to read in the future, along with my thoughts about them. Feel free to leave a comment and read what other people think about the book as weel!! It would mean the world to me if you started reading a book because of my review.";
 const contactContent = "I'm always available at janaurmi6@gmail.com";
 
 const app = express();
